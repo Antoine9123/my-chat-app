@@ -1,0 +1,10 @@
+.signup-container > form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.signup-container > form > button {
+    margin-top: 10px;
+    background-color: rgb(240, 196, 0);
+}
