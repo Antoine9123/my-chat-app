@@ -1,0 +1,51 @@
+.main {
+    display: flex;
+}
+.panel-container {
+  background-color: #7d7d7d35;
+  width: 10vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+
+  padding: 20px;
+}
+
+.panel-container > h2 {
+  font-size: small;
+}
+
+.panel-container h3 {
+  font-size: xx-small;
+}
+
+.main-container {
+  background-color: rgb(95, 105, 154);
+ 
+  width: 90vw;
+  height: 100vh;
+  padding: 100px;
+  
+}
+
+.display-lobby-container {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    height: 70vh;
+    
+    overflow: scroll;
+    
+}
+
+.message {
+    background-color: aliceblue;
+    color: rgb(95, 105, 154);
+    border-radius: 40px;
+    width: fit-content;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 0.5px;
+    padding-bottom: 0.5px;
+}
