@@ -1,7 +1,7 @@
-import getToken from "./getToken";
+
 
 const postData = async (url, body) => {
-  const token = getToken();
+  const token = localStorage.getItem("token") 
 
   if (token) {
     try {
@@ -9,9 +9,7 @@ const postData = async (url, body) => {
         method: "POST",
         credentials: "include",
         headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-          Token: token,
+          "x-access-token" : token
         },
         body: JSON.stringify(body),
       });

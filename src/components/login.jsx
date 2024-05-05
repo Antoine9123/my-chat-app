@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-
 import { Link, useNavigate } from "react-router-dom";
+import Axios from "axios";
 
 import "../assets/signup.css";
 
@@ -10,48 +10,20 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const extractUserIdFromToken = (token) => {
-    if (!token) {
-      return null;
-    }
-
-    const tokenParts = token.split('.');
-    const payload = JSON.parse(atob(tokenParts[1]));
-    const userId = payload.userId;
-  
-    return userId;
-  };
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-
-
     try {
-      const response = await fetch("https://my-chat-app-backend-b8dee6b8f866.herokuapp.com/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
+      Axios.post("https://my-chat-app-backend-b8dee6b8f866.herokuapp.com/auth/login", {
+        username: username,
+        password: password,
+      }).then((response) => {
+        localStorage.setItem('token', response.data.token)
+        console.log("probs here in the navigated ------------------------")
+        navigate(`/dashboard/${response.data.user.id}`);
       });
-
-      if (!response.ok) {
-        throw new Error("Failed to login");
-      }
-      const data = await response.json();
-      const userId = extractUserIdFromToken(data.token);
-      
-      document.cookie = `token=${data.token}; path=/; max-age=${60 * 60}`;
-      document.cookie = `id=${userId}; path=/; max-age=${60 * 60}`;
-
-      setUsername("");
-      setPassword("");
-
-      navigate(`/lobbies/${userId}`);
-
     } catch (error) {
+      console.log("probs here in the catch ------------------------")
       console.error("Signup failed:", error.message);
     }
   };

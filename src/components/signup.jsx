@@ -26,8 +26,6 @@ const Signup = () => {
         throw new Error('Failed to sign up');
       }
 
-      const data = await response.json();
-
       setUsername('');
       setPassword('');
 

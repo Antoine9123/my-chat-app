@@ -1,7 +1,7 @@
-import getToken from "./getToken";
+
 
 const getData = async (url) => {
-  const token = getToken();
+  const token = localStorage.getItem("token") 
 
   if (token) {
     try {
@@ -9,8 +9,7 @@ const getData = async (url) => {
         method: "GET",
         credentials: "include",
         headers: {
-          Authorization: `Bearer ${token}`,
-          Token: token,
+          "x-access-token" : token
         },
       });
 
