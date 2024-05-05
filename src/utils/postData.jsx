@@ -1,17 +1,17 @@
 
 
-const postData = async (url, body) => {
-  const token = localStorage.getItem("token") 
-
+const postData = async (url, bodyjson) => {
+  const token = localStorage.getItem("token")
   if (token) {
     try {
       const response = await fetch(url, {
         method: "POST",
         credentials: "include",
         headers: {
-          "x-access-token" : token
+          "Content-Type": "application/json",
+          token : token
         },
-        body: JSON.stringify(body),
+        body: JSON.stringify(bodyjson),
       });
 
       if (!response.ok) {

@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Outlet, Navigate } from "react-router-dom";
 
-import Login from "./components/login.jsx";
-import Signup from "./components/signup.jsx";
-import Dashboard from "./components/dashboard.jsx";
+import Login from "./components/Login.jsx";
+import Signup from "./components/Signup.jsx";
+import Dashboard from "./components/Dashboard.jsx";
 
 import './App.css'
 

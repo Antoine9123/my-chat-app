@@ -1,15 +1,16 @@
 
 
 const getData = async (url) => {
-  const token = localStorage.getItem("token") 
-
+  const token = localStorage.getItem("token")
+  
   if (token) {
     try {
       const response = await fetch(url, {
         method: "GET",
         credentials: "include",
         headers: {
-          "x-access-token" : token
+          "Content-Type": "application/json",
+          token : token
         },
       });
 

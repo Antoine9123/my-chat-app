@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import "../assets/dashboard.css";
-import "./lobby";
+import "./Lobby";
 import getData from "../utils/getData";
 import postData from "../utils/postData";
-import Lobby from "./lobby";
+import Lobby from "./Lobby";
 
 const Dashboard = () => {
   const { id } = useParams();
@@ -28,6 +28,7 @@ const Dashboard = () => {
 
   const createLobby = async (lobbyName) => {
     try {
+      
       await postData(`https://my-chat-app-backend-b8dee6b8f866.herokuapp.com/lobby/${id}/create-lobby`, {
         name: lobbyName,
       });
