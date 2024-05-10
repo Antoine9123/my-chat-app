@@ -8,8 +8,12 @@
   display: flex;
   flex-direction: column;
   justify-content: left;
+  padding: 10px;
+  text-align: center
+}
 
-  padding: 20px;
+.panel-container > p {
+  padding-top: 35px;
 }
 
 .panel-container > h2 {
@@ -17,16 +21,21 @@
 }
 
 .panel-container h3 {
-  font-size: xx-small;
+  font-size: x-small;
 }
 
 .main-container {
   background-color: rgb(95, 105, 154);
- 
   width: 90vw;
   height: 100vh;
-  padding: 100px;
-  
+  padding: 50px;
+  padding-top: 25px;
+}
+
+.lobby_name {
+  text-align: center;
+  font-size: 40px;
+  border-bottom: solid 2px white;
 }
 
 .display-lobby-container {

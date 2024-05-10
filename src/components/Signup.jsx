@@ -38,15 +38,15 @@ const Signup = () => {
 
   return (
     <>
-      <h1>Signup</h1>
       <div className="signup-container">
-        <form onSubmit={handleSubmit} method="post">
-          <label htmlFor="username">Username</label>
-          <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-          <button type="submit">Create</button>
-        </form>
+        <h1>Sign up to My Chat App</h1>
+          <form onSubmit={handleSubmit} method="post">
+            <label htmlFor="username">Username</label>
+            <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <button type="submit">Create account</button>
+          </form>
       </div>
     </>
   );

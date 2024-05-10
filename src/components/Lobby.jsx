@@ -72,7 +72,7 @@ const Lobby = ({ lobby }) => {
 
   return (
     <>
-      <h1>{lobby.name}</h1>
+      <h1 className="lobby_name" >{lobby.name}</h1>
       <div className="display-lobby-container">
         <hr />
         {lobbyMessages.length > 0 &&

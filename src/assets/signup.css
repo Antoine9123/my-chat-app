@@ -1,10 +1,14 @@
+.signup-container > h1 {
+  font-size: 30px;
+  text-align: center;
+}
 .signup-container > form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   place-items: center;
   align-self: center;
-  
 }
 
 .signup-container > form > button {

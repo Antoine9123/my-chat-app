@@ -59,7 +59,7 @@ const Dashboard = () => {
           {lobbies &&
             lobbies.map((lobby, index) => (
               <div key={index} className="lobby" onClick={() => handleLobby(index)}>
-                <h3 style={{ cursor: "pointer" }} onClick={() => handleLobby(index)}>
+                <h3 className="lobbies_list" style={{ cursor: "pointer" }} onClick={() => handleLobby(index)}>
                   {lobby.name}
                 </h3>
               </div>
@@ -78,7 +78,10 @@ const Dashboard = () => {
             </button>
           </form>
         </div>
-        <div className="main-container">{selectedLobby && <Lobby lobby={selectedLobby} />}</div>
+        <div className="main-container">{selectedLobby && <Lobby lobby={selectedLobby} />}
+            <h2>My Lobbies</h2>
+            <h3></h3>
+        </div>
       </div>
     </>
   );

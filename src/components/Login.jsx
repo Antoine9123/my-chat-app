@@ -30,14 +30,15 @@ const Login = () => {
   return (
     <>
       <div className="signup-container">
-        <form onSubmit={handleSubmit} method="post">
-          <label htmlFor="username">Username</label>
-          <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-          <button> Login</button>
-          <Link to="/signup">Not registered yet ? Click on this link !</Link>
-        </form>
+        <h1>Login to My Chat App</h1>
+          <form onSubmit={handleSubmit} method="post">
+            <label htmlFor="username">Username</label>
+            <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} />
+            <label htmlFor="password">Password</label>
+            <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <button> Login</button>
+            <Link to="/signup">Not registered yet ? Click on this link !</Link>
+          </form>
       </div>
     </>
   );
